@@ -62,9 +62,9 @@ public class GSSender {
 				attribute, value);
 	}
 
-	public void sendEdgeAttributeAdded(long fromId, long toId,
+	public void sendEdgeAttributeAdded(String edgeId,
 			String attribute, Object value) {
-		nsSender.edgeAttributeAdded(sourceId, newEvent(), fromId + "_" + toId,
+		nsSender.edgeAttributeAdded(sourceId, newEvent(), edgeId,
 				attribute, value);
 	}
 
