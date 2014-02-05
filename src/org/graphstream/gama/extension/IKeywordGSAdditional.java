@@ -9,11 +9,10 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String ADD_ATTRIBUTE = "gs_add_attribute";
 	public static final String ADD_SENDER = "gs_add_sender";
 	public static final String CLEAR = "gs_clear";
-	public static final String CLEAR_SENDER = "gs_clear_sender";
+	public static final String CLEAR_SENDERS = "gs_clear_senders";
 	public static final String REMOVE = "gs_remove";
 	public static final String REMOVE_ATTRIBUTE = "gs_remove_attribute";
 	public static final String STEP = "gs_step";
-	
 	
 	// Facets associated to a command
 	
