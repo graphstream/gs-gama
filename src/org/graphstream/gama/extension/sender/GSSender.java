@@ -39,9 +39,8 @@ public class GSSender {
 		nsSender.nodeAdded(sourceId, newEvent(), nodeId);
 	}
 
-	public void sendEdgeAdded(long fromId, long toId, boolean directed) {
-		nsSender.edgeAdded(sourceId, newEvent(), fromId + "_" + toId, fromId
-				+ "", toId + "", directed);
+	public void sendEdgeAdded(String edgeId, String fromId, String toId, boolean directed) {
+		nsSender.edgeAdded(sourceId, newEvent(), edgeId, fromId, toId, directed);
 	}
 
 	public void sendNodeRemoved(long nodeId) {
