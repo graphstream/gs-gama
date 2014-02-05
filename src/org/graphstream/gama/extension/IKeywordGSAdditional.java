@@ -17,4 +17,6 @@ public class IKeywordGSAdditional implements IKeyword {
 	// Facets associated to a command
 	
 	public static final String SENDERID = "gs_sender_id";
+	public static final String STEP_NUMBER = "gs_step_number";
+	
 }
