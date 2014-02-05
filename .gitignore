@@ -1,0 +1,7 @@
+.settings
+.classpath
+.project
+.factorypath
+bin/
+gaml/
+META-INF
