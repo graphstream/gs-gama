@@ -63,6 +63,12 @@ global {
 		// Remove node
 		gs_remove_node gs_sender_id:"test1" gs_node_id:"node3";
 		
+		// Remove edge attribute
+		gs_remove_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"string";
+		
+		// Step
+		gs_step gs_sender_id:"test1" gs_step_number:3;
+		
 		// Clear
 		//gs_clear gs_sender_id:"test1";
 		

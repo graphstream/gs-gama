@@ -76,10 +76,10 @@ public class GSSender {
 				attribute);
 	}
 
-	public void sendEdgeAttributeRemoved(long fromId, long toId,
+	public void sendEdgeAttributeRemoved(String edgeId,
 			String attribute) {
 		nsSender.edgeAttributeRemoved(sourceId, newEvent(),
-				fromId + "_" + toId, attribute);
+				edgeId, attribute);
 	}
 
 	public void sendGraphCleared() {
