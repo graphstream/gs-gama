@@ -11,25 +11,41 @@ global {
 	
 	
 	init {
+		// Clear all previous senders
 		gs_clear_senders;
 		
-		// First test with a clear sender
-		gs_add_sender gs_host:"localhost" gs_port:2000 gs_sender_id:"test1";
-		gs_clear gs_sender_id:"test1";
-		
-		// Second test
-		gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test2";
+		// Add a new sender on localhost:2001
+		gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test1";
 		
 		// Create three nodes
-		gs_add_node gs_sender_id:"test2" gs_node_id:"node1";
-		gs_add_node gs_sender_id:"test2" gs_node_id:"node2";
-		gs_add_node gs_sender_id:"test2" gs_node_id:"node3";
+		gs_add_node gs_sender_id:"test1" gs_node_id:"node1";
+		gs_add_node gs_sender_id:"test1" gs_node_id:"node2";
+		gs_add_node gs_sender_id:"test1" gs_node_id:"node3";
 		
-		// Create one directed
-		gs_add_edge gs_sender_id:"test2" gs_edge_id:"edge1" gs_node_id_from:"node1" gs_node_id_to:"node2" gs_is_directed:true;
-		gs_add_edge gs_sender_id:"test2" gs_edge_id:"edge2" gs_node_id_from:"node2" gs_node_id_to:"node3" gs_is_directed:false;
-
-		//gs_step gs_sender_id:"plop" gs_step_number:0;
+		// Create one directed edge and one undirected edge
+		gs_add_edge gs_sender_id:"test1" gs_edge_id:"edge1" gs_node_id_from:"node1" gs_node_id_to:"node2" gs_is_directed:true;
+		gs_add_edge gs_sender_id:"test1" gs_edge_id:"edge2" gs_node_id_from:"node2" gs_node_id_to:"node3" gs_is_directed:false;
+		
+		// Step
+		gs_step gs_sender_id:"test1" gs_step_number:1;
+		
+		// Add attributes on edge
+			// A string attribute
+		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"string" gs_attribute_value:"a string value";
+			// A double attribute
+		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"double" gs_attribute_value:10.0;
+			// An integer attribute
+		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"integer" gs_attribute_value:1;
+			// A boolean attribute
+		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"boolean" gs_attribute_value:true;
+			// A list attribute
+		//gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"list" gs_attribute_value:["one","two","three"];
+		
+		// Step
+		gs_step gs_sender_id:"test1" gs_step_number:2;
+		
+		// Clear
+		//gs_clear gs_sender_id:"test1";
 	}
 }
 
