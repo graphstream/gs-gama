@@ -26,8 +26,6 @@ global {
 		gs_add_edge gs_sender_id:"test1" gs_edge_id:"edge1" gs_node_id_from:"node1" gs_node_id_to:"node2" gs_is_directed:true;
 		gs_add_edge gs_sender_id:"test1" gs_edge_id:"edge2" gs_node_id_from:"node2" gs_node_id_to:"node3" gs_is_directed:false;
 		
-		// Step
-		gs_step gs_sender_id:"test1" gs_step_number:1;
 		
 		// Add attributes on edge
 			// A string attribute
@@ -42,7 +40,7 @@ global {
 		//gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"list" gs_attribute_value:["one","two","three"];
 		
 		// Step
-		gs_step gs_sender_id:"test1" gs_step_number:2;
+		gs_step gs_sender_id:"test1" gs_step_number:1;
 		
 		// Clear
 		//gs_clear gs_sender_id:"test1";

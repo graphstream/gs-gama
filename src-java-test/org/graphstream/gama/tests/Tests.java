@@ -7,15 +7,10 @@ import org.graphstream.stream.netstream.NetStreamReceiver;
 
 public class Tests {
 
-	public static void main(String[] args) throws UnknownHostException, IOException {
-		// System.setProperty("gs.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-
-		// test graph viewer
-		new SimpleNetStreamViewer(new NetStreamReceiver(2000), true, 500, 500);
-		
-		// test graph viewer
-		new SimpleNetStreamViewer(new NetStreamReceiver(2001), true, 500, 500);
-	
+	public static void main(String[] args) throws InterruptedException, UnknownHostException, IOException {
+		NetStreamReceiver receiver = new NetStreamReceiver(2001);
+		new SimpleNetStreamViewer(receiver, true);
+		new SimpleSinkAdapter(receiver);
 	}
 
 }
