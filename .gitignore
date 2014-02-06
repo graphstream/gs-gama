@@ -5,3 +5,7 @@
 bin/
 gaml/
 META-INF
+.*
+src-gama-test/gama_model/doc/
+src-gama-test/gama_model/images/
+src-gama-test/gama_model/includes/
