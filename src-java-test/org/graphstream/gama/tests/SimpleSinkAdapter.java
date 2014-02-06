@@ -22,14 +22,33 @@ public class SimpleSinkAdapter extends SinkAdapter {
 		System.out.println("Edges attributes :");
 		for(Edge e : graph.getEachEdge()){
 			for(Object o : e.getAttributeKeySet()){
-				System.out.println(e.getAttribute((String)o).getClass() + " et value = " + e.getAttribute((String)o));
+				System.out.println(e.getAttribute((String)o).getClass());
+				if(e.getAttribute((String)o).getClass().isArray()){
+					Object[] array = (Object[])e.getAttribute((String)o);
+					System.out.print('\t');
+					for(Object ob : array)
+						System.out.print(ob);
+					System.out.println();
+				}
+				else{
+					System.out.println("\tvalue = "+e.getAttribute((String)o));
+				}
 			}
 		}
 		System.out.println("Nodes attributes :");
 		for(Node e : graph.getEachNode()){
 			for(Object o : e.getAttributeKeySet()){
-				System.out.println(e.getAttribute((String)o).getClass() + " et value = " + e.getAttribute((String)o));
-			}
+				System.out.println(e.getAttribute((String)o).getClass());
+				if(e.getAttribute((String)o).getClass().isArray()){
+					Object[] array = (Object[])e.getAttribute((String)o);
+					System.out.print('\t');
+					for(Object ob : array)
+						System.out.print(ob);
+					System.out.println();
+				}
+				else{
+					System.out.println("\tvalue = "+e.getAttribute((String)o));
+				}			}
 		}
 	}
 
