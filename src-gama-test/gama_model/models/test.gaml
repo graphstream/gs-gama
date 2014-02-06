@@ -37,7 +37,7 @@ global {
 			// A boolean attribute
 		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"boolean" gs_attribute_value:true;
 			// A list attribute
-		//gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"list" gs_attribute_value:["one","two","three"];
+		gs_add_edge_attribute gs_sender_id:"test1" gs_edge_id:"edge1" gs_attribute_name:"list" gs_attribute_value:[1,2,3];
 		
 		// Step
 		gs_step gs_sender_id:"test1" gs_step_number:1;

@@ -22,7 +22,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.EDGE_ID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_NAME, type = IType.STRING, optional = false),
-		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_VALUE, type = IType.NONE, optional = false)})
+		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_VALUE, type = IType.LIST, optional = false)})
 public class AddEdgeAttributeStatement extends AbstractStatement implements IStatement{
 	
 	final IExpression senderid;
@@ -45,7 +45,14 @@ public class AddEdgeAttributeStatement extends AbstractStatement implements ISta
 		String an = (String)(attname.value(scope));
 		Object av = attval.value(scope);
 		GSSender sender = GSManager.getSender(s);
-		sender.sendEdgeAttributeAdded(eid, an, av);
+		// If it is a GamaList, it must be cast to an array
+		if(av instanceof msi.gama.util.GamaList){
+			Object[] av_ar = ((msi.gama.util.GamaList) av).toArray();
+			sender.sendEdgeAttributeAdded(eid, an, av_ar);
+		}
+		else {
+			sender.sendEdgeAttributeAdded(eid, an, av);
+		}
 		return null;
 	}
 
