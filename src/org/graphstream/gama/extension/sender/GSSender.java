@@ -43,8 +43,8 @@ public class GSSender {
 		nsSender.edgeAdded(sourceId, newEvent(), edgeId, fromId, toId, directed);
 	}
 
-	public void sendNodeRemoved(long nodeId) {
-		nsSender.nodeRemoved(sourceId, newEvent(), nodeId + "");
+	public void sendNodeRemoved(String nodeId) {
+		nsSender.nodeRemoved(sourceId, newEvent(), nodeId);
 	}
 
 	public void sendEdgeRemoved(String edgeId) {
