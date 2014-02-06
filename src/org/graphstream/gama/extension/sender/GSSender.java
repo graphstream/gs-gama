@@ -47,8 +47,8 @@ public class GSSender {
 		nsSender.nodeRemoved(sourceId, newEvent(), nodeId + "");
 	}
 
-	public void sendEdgeRemoved(long fromId, long toId) {
-		nsSender.edgeRemoved(sourceId, newEvent(), fromId + "_" + toId);
+	public void sendEdgeRemoved(String edgeId) {
+		nsSender.edgeRemoved(sourceId, newEvent(), edgeId);
 	}
 
 	public void sendGraphAttributeAdded(String attribute, Object value) {
