@@ -46,7 +46,7 @@ public class AddEdgeStatement extends AbstractStatement implements IStatement{
 		String eid = (String)(edgeid.value(scope));
 		String nfrom = (String)(nodefrom.value(scope));
 		String nto = (String)(nodeto.value(scope));
-		boolean d = (Boolean)(edgeid.value(scope));
+		boolean d = (Boolean)(directed.value(scope));
 		GSSender sender = GSManager.getSender(s);
 		sender.sendEdgeAdded(eid, nfrom, nto, d);
 		return null;
