@@ -12,6 +12,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String ADD_SENDER = "gs_add_sender";
 	public static final String CLEAR = "gs_clear";
 	public static final String CLEAR_SENDERS = "gs_clear_senders";
+	public static final String CLOSE = "gs_close";
 	public static final String REMOVE_EDGE = "gs_remove_edge";
 	public static final String REMOVE_EDGE_ATTRIBUTE = "gs_remove_edge_attribute";
 	public static final String REMOVE_NODE = "gs_remove_node";

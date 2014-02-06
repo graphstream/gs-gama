@@ -43,7 +43,13 @@ global {
 		gs_step gs_sender_id:"test1" gs_step_number:1;
 		
 		// Clear
-		//gs_clear gs_sender_id:"test1";
+		gs_clear gs_sender_id:"test1";
+		
+		// Close
+		gs_close gs_sender_id:"test1";
+		
+		// If the previous command has worked, the next one should work too
+		gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test1";
 	}
 }
 
