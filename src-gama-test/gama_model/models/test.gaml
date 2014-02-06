@@ -57,14 +57,20 @@ global {
 		// Step
 		gs_step gs_sender_id:"test1" gs_step_number:2;
 		
+		//Remove edge
+		gs_remove_edge gs_sender_id:"test1" gs_edge_id:"edge2";
+		
+		// Remove node
+		gs_remove_node gs_sender_id:"test1" gs_node_id:"node3";
+		
 		// Clear
-		gs_clear gs_sender_id:"test1";
+		//gs_clear gs_sender_id:"test1";
 		
 		// Close
-		gs_close gs_sender_id:"test1";
+		//gs_close gs_sender_id:"test1";
 		
 		// If the previous command has worked, the next one should work too
-		gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test1";
+		//gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test1";
 	}
 }
 
