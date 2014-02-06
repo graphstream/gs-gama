@@ -72,6 +72,24 @@ global {
 		// Step
 		gs_step gs_sender_id:"test1" gs_step_number:3;
 		
+		// Add attributes on node
+			// A string attribute
+		gs_add_graph_attribute gs_sender_id:"test1" gs_attribute_name:"string" gs_attribute_value:"a string value";
+			// A double attribute
+		gs_add_graph_attribute gs_sender_id:"test1" gs_attribute_name:"double" gs_attribute_value:10.0;
+			// An integer attribute
+		gs_add_graph_attribute gs_sender_id:"test1" gs_attribute_name:"integer" gs_attribute_value:1;
+			// A boolean attribute
+		gs_add_graph_attribute gs_sender_id:"test1" gs_attribute_name:"boolean" gs_attribute_value:true;
+			// A list attribute
+		gs_add_graph_attribute gs_sender_id:"test1" gs_attribute_name:"list" gs_attribute_value:[1,2,3];
+		
+		// Remove graph attribute
+		gs_remove_graph_attribute gs_sender_id:"test1" gs_attribute_name:"string";
+		
+		// Step
+		gs_step gs_sender_id:"test1" gs_step_number:4;
+		
 		// Clear
 		//gs_clear gs_sender_id:"test1";
 		

@@ -7,6 +7,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	
 	public static final String ADD_EDGE = "gs_add_edge";
 	public static final String ADD_EDGE_ATTRIBUTE = "gs_add_edge_attribute";
+	public static final String ADD_GRAPH_ATTRIBUTE = "gs_add_graph_attribute";
 	public static final String ADD_NODE = "gs_add_node";
 	public static final String ADD_NODE_ATTRIBUTE = "gs_add_node_attribute";
 	public static final String ADD_SENDER = "gs_add_sender";
@@ -15,6 +16,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String CLOSE = "gs_close";
 	public static final String REMOVE_EDGE = "gs_remove_edge";
 	public static final String REMOVE_EDGE_ATTRIBUTE = "gs_remove_edge_attribute";
+	public static final String REMOVE_GRAPH_ATTRIBUTE = "gs_remove_graph_attribute";
 	public static final String REMOVE_NODE = "gs_remove_node";
 	public static final String REMOVE_NODE_ATTRIBUTE = "gs_remove_node_attribute";
 	public static final String STEP = "gs_step";

@@ -21,34 +21,49 @@ public class SimpleSinkAdapter extends SinkAdapter {
 	public void stepBegins(String sourceId, long timeId, double step) {
 		System.out.println("Edges attributes :");
 		for(Edge e : graph.getEachEdge()){
-			for(Object o : e.getAttributeKeySet()){
-				System.out.println(e.getAttribute((String)o).getClass());
-				if(e.getAttribute((String)o).getClass().isArray()){
-					Object[] array = (Object[])e.getAttribute((String)o);
+			for(String o : e.getAttributeKeySet()){
+				System.out.println(e.getAttribute(o).getClass());
+				if(e.getAttribute(o).getClass().isArray()){
+					Object[] array = (Object[])e.getAttribute(o);
 					System.out.print('\t');
 					for(Object ob : array)
 						System.out.print(ob);
 					System.out.println();
 				}
 				else{
-					System.out.println("\tvalue = "+e.getAttribute((String)o));
+					System.out.println("\tvalue = "+e.getAttribute(o));
 				}
 			}
 		}
 		System.out.println("Nodes attributes :");
 		for(Node e : graph.getEachNode()){
-			for(Object o : e.getAttributeKeySet()){
-				System.out.println(e.getAttribute((String)o).getClass());
-				if(e.getAttribute((String)o).getClass().isArray()){
-					Object[] array = (Object[])e.getAttribute((String)o);
+			for(String o : e.getAttributeKeySet()){
+				System.out.println(e.getAttribute(o).getClass());
+				if(e.getAttribute(o).getClass().isArray()){
+					Object[] array = (Object[])e.getAttribute(o);
 					System.out.print('\t');
 					for(Object ob : array)
 						System.out.print(ob);
 					System.out.println();
 				}
 				else{
-					System.out.println("\tvalue = "+e.getAttribute((String)o));
-				}			}
+					System.out.println("\tvalue = "+e.getAttribute(o));
+				}			
+			}
+		}
+		System.out.println("Graph attributes :");
+		for(String o : graph.getAttributeKeySet()){
+			System.out.println(graph.getAttribute(o).getClass());
+			if(graph.getAttribute(o).getClass().isArray()){
+				Object[] array = (Object[])graph.getAttribute(o);
+				System.out.print('\t');
+				for(Object ob : array)
+					System.out.print(ob);
+				System.out.println();
+			}
+			else{
+				System.out.println("\tvalue = "+graph.getAttribute(o));
+			}
 		}
 	}
 
