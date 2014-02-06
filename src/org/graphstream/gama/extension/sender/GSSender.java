@@ -55,9 +55,9 @@ public class GSSender {
 		nsSender.graphAttributeAdded(sourceId, newEvent(), attribute, value);
 	}
 
-	public void sendNodeAttributeAdded(long nodeId, String attribute,
+	public void sendNodeAttributeAdded(String nodeId, String attribute,
 			Object value) {
-		nsSender.nodeAttributeAdded(sourceId, newEvent(), nodeId + "",
+		nsSender.nodeAttributeAdded(sourceId, newEvent(), nodeId,
 				attribute, value);
 	}
 
@@ -71,8 +71,8 @@ public class GSSender {
 		nsSender.graphAttributeRemoved(sourceId, newEvent(), attribute);
 	}
 
-	public void sendNodeAttributeRemoved(long nodeId, String attribute) {
-		nsSender.nodeAttributeRemoved(sourceId, newEvent(), nodeId + "",
+	public void sendNodeAttributeRemoved(String nodeId, String attribute) {
+		nsSender.nodeAttributeRemoved(sourceId, newEvent(), nodeId,
 				attribute);
 	}
 
