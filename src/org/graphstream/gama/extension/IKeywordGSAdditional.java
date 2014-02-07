@@ -4,7 +4,7 @@ import msi.gama.common.interfaces.IKeyword;
 
 public class IKeywordGSAdditional implements IKeyword {
 	// New commands
-	
+		// Sender command
 	public static final String ADD_EDGE = "gs_add_edge";
 	public static final String ADD_EDGE_ATTRIBUTE = "gs_add_edge_attribute";
 	public static final String ADD_GRAPH_ATTRIBUTE = "gs_add_graph_attribute";
@@ -20,9 +20,14 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String REMOVE_NODE = "gs_remove_node";
 	public static final String REMOVE_NODE_ATTRIBUTE = "gs_remove_node_attribute";
 	public static final String STEP = "gs_step";
-	
+		//Receiver command
+	public static final String GET_EDGE_ATTRIBUTE = "gs_get_edge_attribute";
+	public static final String GET_NODE_ATTRIBUTE = "gs_get_node_attribute";
+	public static final String GET_GRAPH_ATTRIBUTE = "gs_get_graph_attribute";
+	public static final String WAIT_STEP = "gs_wait_step";
+	public static final String FLUSH = "gs_flush";
+
 	// Facets associated to a command
-	
 	public static final String ATTRIBUTE_NAME = "gs_attribute_name";
 	public static final String ATTRIBUTE_VALUE = "gs_attribute_value";
 	public static final String EDGE_ID = "gs_edge_id";
@@ -32,7 +37,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String NODE_ID_FROM = "gs_node_id_from";
 	public static final String NODE_ID_TO = "gs_node_id_to";
 	public static final String PORT = "gs_port";
+	public static final String RECEIVERID = "gs_receiver_id";
 	public static final String SENDERID = "gs_sender_id";
 	public static final String STEP_NUMBER = "gs_step_number";
-	
 }
