@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import msi.gama.runtime.exceptions.GamaRuntimeException;
+
+import org.graphstream.gama.extension.receiver.GSReceiver;
 import org.graphstream.gama.extension.sender.GSSender;
 
 import org.graphstream.stream.sync.SinkTime;
@@ -16,8 +19,10 @@ import org.graphstream.stream.sync.SourceTime;
  * It maintains a common sync mechanism for all senders and receivers, as well
  * as methods to access senders and receivers by their id, to add and to remove
  * them.
- *
- * @author Stefan Balev
+ * 
+ * This class is almost a copy of the one from gs-netlogo but updated to run with gama
+ * 
+ * @author Stefan Balev, modified by Thibaut Démare
  *
  */
 public class GSManager {
@@ -26,7 +31,7 @@ public class GSManager {
 	private static SinkTime sinkTime;
 
 	private static Map<String, GSSender> senders;
-//	private static Map<String, GSReceiver> receivers;
+	private static Map<String, GSReceiver> receivers;
 
 	static {
 		sourceId = "gs-gama@"
@@ -35,22 +40,22 @@ public class GSManager {
 		sinkTime = new SinkTime();
 		sourceTime.setSinkTime(sinkTime);
 		senders = new HashMap<String, GSSender>();
-//		receivers = new HashMap<String, GSReceiver>();
+		receivers = new HashMap<String, GSReceiver>();
 	}
 
 
-	public static GSSender getSender(String senderId)  {
+	public static GSSender getSender(String senderId) throws GamaRuntimeException {
 		GSSender sender = senders.get(senderId);
 		if (sender == null)
-			System.out.println("Sender \"" + senderId
+			throw new RuntimeException("Sender \"" + senderId
 					+ "\" does not exist");
 		return sender;
 	}
 
-	public static void addSender(String senderId, String host, int port) {
+	public static void addSender(String senderId, String host, int port) throws GamaRuntimeException {
 		GSSender sender = senders.get(senderId);
 		if (sender != null)
-			System.out.println("Sender \"" + senderId
+			throw new RuntimeException("Sender \"" + senderId
 					+ "\" already exists");
 		sender = new GSSender(sourceId, sourceTime, host, port);
 		senders.put(senderId, sender);
@@ -62,20 +67,20 @@ public class GSManager {
 		senders.clear();
 	}
 
-	/*public static GSReceiver getReceiver(String receiverId)
-			throws ExtensionException {
+	public static GSReceiver getReceiver(String receiverId)
+			throws GamaRuntimeException { 
 		GSReceiver receiver = receivers.get(receiverId);
 		if (receiver == null)
-			throw new ExtensionException("Receiver \"" + receiverId
+			throw new RuntimeException("Receiver \"" + receiverId
 					+ "\" does not exist");
 		return receiver;
 	}
 
 	public static void addReceiver(String receiverId, String host, int port,
-			Set<String> attributeFilter) throws ExtensionException {
+			Set<String> attributeFilter) throws GamaRuntimeException {
 		GSReceiver receiver = receivers.get(receiverId);
 		if (receiver != null)
-			throw new ExtensionException("Receiver \"" + receiverId
+			throw new RuntimeException("Receiver \"" + receiverId
 					+ "\" already exists");
 		receiver = new GSReceiver(sinkTime, host, port, attributeFilter);
 		receivers.put(receiverId, receiver);
@@ -85,5 +90,5 @@ public class GSManager {
 		for (GSReceiver receiver : receivers.values())
 			receiver.close();
 		receivers.clear();
-	}*/
+	}
 }
