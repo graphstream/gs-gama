@@ -21,6 +21,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String REMOVE_NODE_ATTRIBUTE = "gs_remove_node_attribute";
 	public static final String STEP = "gs_step";
 		//Receiver command
+	public static final String ADD_RECEIVER = "gs_add_receiver";
 	public static final String GET_EDGE_ATTRIBUTE = "gs_get_edge_attribute";
 	public static final String GET_NODE_ATTRIBUTE = "gs_get_node_attribute";
 	public static final String GET_GRAPH_ATTRIBUTE = "gs_get_graph_attribute";
@@ -28,6 +29,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String FLUSH = "gs_flush";
 
 	// Facets associated to a command
+	public static final String ATTRIBUTE_FILTER = "gs_attribute_name";
 	public static final String ATTRIBUTE_NAME = "gs_attribute_name";
 	public static final String ATTRIBUTE_VALUE = "gs_attribute_value";
 	public static final String EDGE_ID = "gs_edge_id";
