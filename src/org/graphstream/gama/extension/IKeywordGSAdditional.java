@@ -41,6 +41,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String NODE_ID_TO = "gs_node_id_to";
 	public static final String PORT = "gs_port";
 	public static final String RECEIVERID = "gs_receiver_id";
+	public static final String RETURN = "gs_return";
 	public static final String SENDERID = "gs_sender_id";
 	public static final String STEP_NUMBER = "gs_step_number";
 }
