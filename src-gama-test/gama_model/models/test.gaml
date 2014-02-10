@@ -11,6 +11,8 @@ global {
 	
 	
 	init {
+		// Send data
+		
 		// Clear all previous senders
 		gs_clear_senders;
 		
@@ -98,21 +100,63 @@ global {
 		
 		// If the previous command has worked, the next one should work too
 		//gs_add_sender gs_host:"localhost" gs_port:2001 gs_sender_id:"test1";
+		
+		// Receive Data
+		
+		// Clear all receivers
+		gs_clear_receivers;
+		
+		// Add a new receiver
+		gs_add_receiver gs_receiver_id:"test2" gs_host:"localhost" gs_port:3001;
+		
+		// Wait step
+		write "Receiver created. Wait for a signal of new step.";
+		float syncStep <- 0.0;
+		gs_wait_step gs_receiver_id:"test2" gs_return:syncStep;
+		
+		// Get graph attribute(s)
+		list val <- nil;
+		gs_get_graph_attribute gs_receiver_id:"test2" gs_attribute_name:"a" returns:val;
+		
+		int i<- 0;
+		loop while: i < length(val) {
+			write val[i];
+			i <- i + 1;
+		}
+		
+		
+		// Wait step
+		syncStep <- 0.0;
+		gs_wait_step gs_receiver_id:"test2" gs_return:syncStep;
+		
+		// Get node attribute(s)
+		gs_get_node_attribute gs_receiver_id:"test2" gs_node_id:"0" gs_attribute_name:"na" returns:val;
+		
+		int i<- 0;
+		loop while: i < length(val) {
+			write val[i];
+			i <- i + 1;
+		}
+		
+		// Wait step
+		syncStep <- 0.0;
+		gs_wait_step gs_receiver_id:"test2" gs_return:syncStep;
+		
+		// Get edge attribute(s)
+		gs_get_edge_attribute gs_receiver_id:"test2" gs_edge_id:"0_1" gs_attribute_name:"ea" returns:val;
+		
+		int i<- 0;
+		loop while: i < length(val) {
+			write val[i];
+			i <- i + 1;
+		}
+		
+		// Flush the given receiver
+		gs_flush gs_receiver_id:"test2";
+		
 	}
-}
-
-species Provider {
-	
-	
-	aspect base { 
-		draw square(1.5°km) color: rgb([100, 0, 100]) ;
-	} 
 }
 
 experiment test_gs_extension type: gui {
-	output {
-		display display_FinalDestinationManager {
-			species Provider aspect: base;
-		}
-	}
+	
 }
