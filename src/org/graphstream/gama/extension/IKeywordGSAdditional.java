@@ -22,6 +22,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String STEP = "gs_step";
 		//Receiver command
 	public static final String ADD_RECEIVER = "gs_add_receiver";
+	public static final String CLEAR_RECEIVERS = "gs_clear_receivers";
 	public static final String GET_EDGE_ATTRIBUTE = "gs_get_edge_attribute";
 	public static final String GET_NODE_ATTRIBUTE = "gs_get_node_attribute";
 	public static final String GET_GRAPH_ATTRIBUTE = "gs_get_graph_attribute";
