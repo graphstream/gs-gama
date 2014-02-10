@@ -45,9 +45,9 @@ public class AddReceiverStatement extends AbstractStatement implements IStatemen
 		String r = (String)(receiverid.value(scope));
 		String h = (String)(host.value(scope));
 		int p = (Integer)(port.value(scope));
-		Set filterSet = new HashSet((msi.gama.util.GamaList) filter.value(scope));
-		if (filterSet.size() == 0)
-			filterSet = null;
+		Set filterSet = null;
+		if(filter != null)
+			filterSet = new HashSet((msi.gama.util.GamaList) filter.value(scope));
 		GSManager.addReceiver(r, h, p, filterSet);
 		return null;
 	}
