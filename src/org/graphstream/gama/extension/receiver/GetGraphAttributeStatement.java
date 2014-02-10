@@ -22,7 +22,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_NAME, type = IType.STRING, optional = false),
-		 @facet(name = IKeyword.RETURNS, type = IType.NEW_TEMP_ID, optional = false)})
+		 @facet(name = IKeyword.RETURNS, type = IType.LIST, optional = false)})
 public class GetGraphAttributeStatement extends AbstractStatement implements IStatement{
 	
 	final IExpression receiverid;

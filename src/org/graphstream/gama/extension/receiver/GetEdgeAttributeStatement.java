@@ -23,7 +23,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.EDGE_ID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_NAME, type = IType.STRING, optional = false),
-		 @facet(name = IKeyword.RETURNS, type = IType.NEW_TEMP_ID, optional = false)})
+		 @facet(name = IKeyword.RETURNS, type = IType.LIST, optional = false)})
 public class GetEdgeAttributeStatement extends AbstractStatement implements IStatement{
 	
 	final IExpression receiverid;
