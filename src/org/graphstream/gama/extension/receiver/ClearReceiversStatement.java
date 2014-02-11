@@ -13,7 +13,7 @@ import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
 @symbol(name = IKeywordGSAdditional.CLEAR_RECEIVERS, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 public class ClearReceiversStatement extends AbstractStatement implements IStatement{
 	
 	public ClearReceiversStatement(IDescription desc) {

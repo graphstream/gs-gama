@@ -18,7 +18,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 
 
 @symbol(name = IKeywordGSAdditional.ADD_GRAPH_ATTRIBUTE, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_NAME, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.ATTRIBUTE_VALUE, type = IType.NONE, optional = false)})

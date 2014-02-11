@@ -19,7 +19,7 @@ import msi.gaml.types.IType;
 
 
 @symbol(name = IKeywordGSAdditional.CLEAR, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false) })
 public class ClearStatement extends AbstractStatement implements IStatement{
 	

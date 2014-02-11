@@ -19,7 +19,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 
 
 @symbol(name = IKeywordGSAdditional.FLUSH, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false)})
 public class FlushStatement extends AbstractStatement implements IStatement{
 	

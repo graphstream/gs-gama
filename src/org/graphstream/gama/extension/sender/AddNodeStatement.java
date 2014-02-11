@@ -17,7 +17,7 @@ import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
 @symbol(name = IKeywordGSAdditional.ADD_NODE, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.NODE_ID, type = IType.STRING, optional = false)})
 public class AddNodeStatement extends AbstractStatement implements IStatement{

@@ -19,7 +19,7 @@ import org.graphstream.gama.extension.IKeywordGSAdditional;
 
 
 @symbol(name = IKeywordGSAdditional.WAIT_STEP, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
-@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SINGLE_STATEMENT })
+@inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false),
 		 @facet(name = IKeywordGSAdditional.RETURN, type = IType.FLOAT, optional = false)})
 public class WaitStepStatement extends AbstractStatement implements IStatement{
