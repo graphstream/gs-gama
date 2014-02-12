@@ -12,6 +12,15 @@ import msi.gaml.statements.IStatement;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
+/**
+ * Implements the {@code gs_clear_senders} command.
+ *
+ * <pre>
+ * gs_clear_senders;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.CLEAR_SENDERS, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 public class ClearSendersStatement extends AbstractStatement implements IStatement{

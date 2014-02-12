@@ -16,8 +16,15 @@ import msi.gaml.statements.AbstractStatement;
 import msi.gaml.statements.IStatement;
 import msi.gaml.types.IType;
 
-
-
+/**
+ * Implements the {@code gs_clear} command.
+ *
+ * <pre>
+ * gs_clear gs_sender_id:senderId;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.CLEAR, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false) })

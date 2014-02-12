@@ -16,7 +16,15 @@ import msi.gaml.types.IType;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
-
+/**
+ * Implements the {@code gs_add_graph_attribute} command.
+ *
+ * <pre>
+ * gs_add_graph_attribute gs_sender_id:senderId gs_attribute_name:name gs_attribute_value:value;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.ADD_GRAPH_ATTRIBUTE, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false),

@@ -16,6 +16,15 @@ import msi.gaml.types.IType;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
+/**
+ * Implements the {@code gs_add_edge} command.
+ *
+ * <pre>
+ * gs_add_edge gs_sender_id:senderId gs_edge_id:edgeId gs_node_id_from:nodeId gs_node_id_to:nodeId gs_is_directed:dir;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.ADD_EDGE, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.SENDERID, type = IType.STRING, optional = false),
