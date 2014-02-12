@@ -35,7 +35,7 @@ public class IKeywordGSAdditional implements IKeyword {
 	public static final String FLUSH = "gs_flush";
 
 	// Facets associated to a command
-	public static final String ATTRIBUTE_FILTER = "gs_attribute_name";
+	public static final String ATTRIBUTE_FILTER = "gs_attributes_filtered";
 	public static final String ATTRIBUTE_NAME = "gs_attribute_name";
 	public static final String ATTRIBUTE_VALUE = "gs_attribute_value";
 	public static final String EDGE_ID = "gs_edge_id";
