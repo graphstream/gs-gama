@@ -40,7 +40,7 @@ public class CloseStatement extends AbstractStatement implements IStatement{
 	@Override
 	protected Object privateExecuteIn(IScope scope) throws GamaRuntimeException {
 		String senderId = (String)(senderid.value(scope));
-		GSSender sender = GSManager.getSender(senderId);
+		GSSender sender = GSManager.removeSender(senderId);
 		sender.close();
 		return null;
 	}

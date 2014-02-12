@@ -52,6 +52,14 @@ public class GSManager {
 		return sender;
 	}
 
+	public static GSSender removeSender(String senderId) throws GamaRuntimeException {
+		GSSender sender = senders.remove(senderId);
+		if (sender == null)
+			throw new RuntimeException("Sender \"" + senderId
+					+ "\" does not exist");
+		return sender;
+	}
+	
 	public static void addSender(String senderId, String host, int port) throws GamaRuntimeException {
 		GSSender sender = senders.get(senderId);
 		if (sender != null)
