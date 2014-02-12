@@ -2,6 +2,11 @@ package org.graphstream.gama.extension;
 
 import msi.gama.common.interfaces.IKeyword;
 
+/**
+ * This class contains all keywords used by the gs-gama plug-in.
+ * @author Thibaut Démare
+ *
+ */
 public class IKeywordGSAdditional implements IKeyword {
 	// New commands
 		// Sender command
