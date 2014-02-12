@@ -17,7 +17,15 @@ import msi.gaml.types.IType;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
-
+/**
+ * Implements the {@code gs_flush} command.
+ *
+ * <pre>
+ * gs_flush gs_receiver_id:receiverId;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.FLUSH, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false)})

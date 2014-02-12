@@ -17,7 +17,15 @@ import msi.gaml.types.IType;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
-
+/**
+ * Implements the {@code gs_get_graph_attribute} command.
+ *
+ * <pre>
+ * gs_get_graph_attribute gs_receiver_id:receiverId gs_attribute_name:name returns:list;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.GET_GRAPH_ATTRIBUTE, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false),

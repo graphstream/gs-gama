@@ -12,6 +12,15 @@ import msi.gaml.statements.IStatement;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
+/**
+ * Implements the {@code gs_clear_receivers} command.
+ *
+ * <pre>
+ * gs_clear_receivers;
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.CLEAR_RECEIVERS, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 public class ClearReceiversStatement extends AbstractStatement implements IStatement{

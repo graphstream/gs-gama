@@ -19,6 +19,16 @@ import msi.gaml.types.IType;
 import org.graphstream.gama.extension.GSManager;
 import org.graphstream.gama.extension.IKeywordGSAdditional;
 
+/**
+ * Implements the {@code gs_add_receiver} command.
+ *
+ * <pre>
+ * gs_add_receiver gs_receiver_id:receiverId gs_host:host gs_port:port;
+ * (gs_add_receiver gs_receiver_id:receiverId gs_host:host gs_port:port gs_attributes_filtered:listAttributes;)
+ * </pre>
+ * @author Thibaut Démare
+ *
+ */
 @symbol(name = IKeywordGSAdditional.ADD_RECEIVER, kind = ISymbolKind.SINGLE_STATEMENT, with_sequence = false)
 @inside(kinds = { ISymbolKind.BEHAVIOR, ISymbolKind.SEQUENCE_STATEMENT, ISymbolKind.LAYER })
 @facets(value = { @facet(name = IKeywordGSAdditional.RECEIVERID, type = IType.STRING, optional = false),
