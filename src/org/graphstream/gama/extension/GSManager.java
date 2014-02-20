@@ -71,7 +71,8 @@ public class GSManager {
 
 	public static void clearSenders() {
 		for (GSSender sender : senders.values())
-			sender.close();
+			if(sender != null)
+				sender.close();
 		senders.clear();
 	}
 
