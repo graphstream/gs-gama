@@ -77,7 +77,7 @@ public class AddReceiverStatement extends AbstractStatement implements IStatemen
 		Set filterSet = null;
 		if(filter != null)
 			filterSet = new HashSet((msi.gama.util.GamaList) filter.value(scope));
-		GSManager.addReceiver(r, h, p, filterSet);
+		GSManager.addReceiver(scope, r, h, p, filterSet);
 		return null;
 	}
 }

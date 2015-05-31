@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import msi.gama.runtime.IScope;
 import msi.gama.runtime.exceptions.GamaRuntimeException;
 
 import org.graphstream.gama.extension.receiver.GSReceiver;
@@ -104,13 +105,13 @@ public class GSManager {
 		return receiver;
 	}
 
-	public static void addReceiver(String receiverId, String host, int port,
+	public static void addReceiver(IScope scope, String receiverId, String host, int port,
 			Set<String> attributeFilter) throws GamaRuntimeException {
 		GSReceiver receiver = receivers.get(receiverId);
 		if (receiver != null)
 			throw new RuntimeException("Receiver \"" + receiverId
 					+ "\" already exists");
-		receiver = new GSReceiver(sinkTime, host, port, attributeFilter);
+		receiver = new GSReceiver(scope, sinkTime, host, port, attributeFilter);
 		receivers.put(receiverId, receiver);
 	}
 

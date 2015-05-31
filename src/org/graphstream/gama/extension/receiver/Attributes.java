@@ -22,7 +22,9 @@ package org.graphstream.gama.extension.receiver;
 import java.util.HashMap;
 import java.util.Map;
 
+import msi.gama.runtime.IScope;
 import msi.gama.util.GamaList;
+import msi.gama.util.GamaListFactory;
 
 
 /**
@@ -48,30 +50,30 @@ public class Attributes {
 		return map.remove(attribute);
 	}
 
-	public void add(String attribute, Object value) {
-		Object gamaValue = netStreamToGama(value);
+	public void add(IScope scope, String attribute, Object value) {
+		Object gamaValue = netStreamToGama(scope, value);
 		if (gamaValue == null)
 			return;
 		GamaList list = map.get(attribute);
 		if (list == null) {
-			list = new GamaList();
+			list = GamaListFactory.EMPTY_LIST;
 			map.put(attribute, list);
 		}
-		list.add(gamaValue);
+		list.addValue(scope, gamaValue);
 	}
 
-	protected static Object netStreamToGama(Object o) {
+	protected static Object netStreamToGama(IScope scope, Object o) {
 		Object result = simpleNetStreamToGama(o);
 		if (result != null)
 			return result;
 		if (!o.getClass().isArray())
 			return null;
-		GamaList list = new GamaList();
+		GamaList list = GamaListFactory.EMPTY_LIST;
 		for (Object element : (Object[]) o) {
 			Object gamaElement = simpleNetStreamToGama(element);
 			if (gamaElement == null)
 				return null;
-			list.add(gamaElement);
+			list.addValue(scope, gamaElement);
 		}
 		return list;
 	}

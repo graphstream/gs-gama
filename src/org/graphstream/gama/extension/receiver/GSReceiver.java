@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
+import msi.gama.runtime.IScope;
 import msi.gama.runtime.exceptions.GamaRuntimeException;
 import msi.gama.util.GamaList;
 
@@ -55,9 +56,11 @@ public class GSReceiver extends SinkAdapter {
 	protected Map<String, Attributes> edgeAttributes;
 	protected Queue<Double> steps;
 	protected Set<String> attributeFilter;
-
-	public GSReceiver(SinkTime sinkTime, String host, int port,
+	protected IScope scope;
+	
+	public GSReceiver(IScope scope, SinkTime sinkTime, String host, int port,
 			Set<String> attributeFilter) throws GamaRuntimeException {
+		this.scope = scope;
 		this.sinkTime = sinkTime;
 		this.attributeFilter = attributeFilter;
 		try {
@@ -133,7 +136,7 @@ public class GSReceiver extends SinkAdapter {
 				a = new Attributes();
 				edgeAttributes.put(edgeId, a);
 			}
-			a.add(attribute, value);
+			a.add(scope, attribute, value);
 		}
 	}
 
@@ -149,7 +152,7 @@ public class GSReceiver extends SinkAdapter {
 		if (sinkTime.isNewEvent(sourceId, timeId)
 				&& (attributeFilter == null || attributeFilter
 				.contains(attribute)))
-			graphAttributes.add(attribute, value);
+			graphAttributes.add(scope, attribute, value);
 	}
 
 	@Override
@@ -169,7 +172,7 @@ public class GSReceiver extends SinkAdapter {
 				a = new Attributes();
 				nodeAttributes.put(nodeId, a);
 			}
-			a.add(attribute, value);
+			a.add(scope, attribute, value);
 		}
 	}
 
