@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Thibaut Démare
+ * Copyright 2014 Thibaut Dï¿½mare
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -30,6 +30,7 @@ import java.util.Set;
 import msi.gama.runtime.IScope;
 import msi.gama.runtime.exceptions.GamaRuntimeException;
 import msi.gama.util.GamaList;
+import msi.gama.util.IList;
 
 import org.graphstream.stream.SinkAdapter;
 import org.graphstream.stream.netstream.NetStreamReceiver;
@@ -44,7 +45,7 @@ import org.graphstream.stream.thread.ThreadProxyPipe;
  * 
  * This class is almost a copy of the one from gs-netlogo but updated to run with Gama
  * 
- * @author Stefan Balev, modified by Thibaut Démare
+ * @author Stefan Balev, modified by Thibaut Dï¿½mare
  *
  */
 public class GSReceiver extends SinkAdapter {
@@ -78,18 +79,18 @@ public class GSReceiver extends SinkAdapter {
 		steps = new LinkedList<Double>();
 	}
 
-	public GamaList receiveGraphAttribute(String attribute) {
+	public IList receiveGraphAttribute(String attribute) {
 		pipe.pump();
 		return graphAttributes.get(attribute);
 	}
 
-	public GamaList receiveNodeAttribute(String nodeId, String attribute) {
+	public IList receiveNodeAttribute(String nodeId, String attribute) {
 		pipe.pump();
 		Attributes a = nodeAttributes.get(nodeId);
 		return a == null ? null : a.get(attribute);
 	}
 
-	public GamaList receiveEdgeAttribute(String edgeId,	String attribute) {
+	public IList receiveEdgeAttribute(String edgeId,	String attribute) {
 		pipe.pump();
 		Attributes a = edgeAttributes.get(edgeId);
 		return a == null ? null : a.get(attribute);

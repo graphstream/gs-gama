@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Thibaut Démare
+ * Copyright 2014 Thibaut Dï¿½mare
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -25,6 +25,8 @@ import java.util.Map;
 import msi.gama.runtime.IScope;
 import msi.gama.util.GamaList;
 import msi.gama.util.GamaListFactory;
+import msi.gama.util.IList;
+import msi.gaml.types.Types;
 
 
 /**
@@ -36,17 +38,17 @@ import msi.gama.util.GamaListFactory;
  * 
  *  This class is almost a copy of the one from gs-netlogo but updated to run with Gama
  *  
- * @author Stefan Balev, modified by Thibaut Démare
+ * @author Stefan Balev, modified by Thibaut Dï¿½mare
  *
  */
 public class Attributes {
-	Map<String, GamaList> map;
+	Map<String, IList> map;
 
 	public Attributes() {
-		map = new HashMap<String, GamaList>();
+		map = new HashMap<String, IList>();
 	}
 
-	public GamaList get(String attribute) {
+	public IList get(String attribute) {
 		return map.remove(attribute);
 	}
 
@@ -54,9 +56,9 @@ public class Attributes {
 		Object gamaValue = netStreamToGama(scope, value);
 		if (gamaValue == null)
 			return;
-		GamaList list = map.get(attribute);
+		IList list = map.get(attribute);
 		if (list == null) {
-			list = GamaListFactory.EMPTY_LIST;
+			list = GamaListFactory.create();
 			map.put(attribute, list);
 		}
 		list.addValue(scope, gamaValue);
@@ -68,7 +70,7 @@ public class Attributes {
 			return result;
 		if (!o.getClass().isArray())
 			return null;
-		GamaList list = GamaListFactory.EMPTY_LIST;
+		IList list = GamaListFactory.create();
 		for (Object element : (Object[]) o) {
 			Object gamaElement = simpleNetStreamToGama(element);
 			if (gamaElement == null)

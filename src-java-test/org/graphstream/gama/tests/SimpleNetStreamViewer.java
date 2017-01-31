@@ -1,7 +1,7 @@
 package org.graphstream.gama.tests;
 
 import org.graphstream.stream.netstream.NetStreamReceiver;
-import org.graphstream.ui.swingViewer.Viewer;
+import org.graphstream.ui.view.Viewer;
 
 public class SimpleNetStreamViewer extends Viewer {
 	public SimpleNetStreamViewer(NetStreamReceiver receiver) {
